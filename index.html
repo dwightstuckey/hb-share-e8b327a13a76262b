@@ -197,6 +197,47 @@ ul{list-style:none}
 #player.portrait #cap{position:relative;left:auto;bottom:auto;transform:none;text-align:center}
 #player.portrait #cap span{background:none;padding:0;color:#fff}
 @media (max-width:700px){#big .pb{width:64px;height:64px;box-shadow:0 6px 20px rgba(0,0,0,.4),0 0 0 6px rgba(255,255,255,.12)}#big svg{width:28px;height:28px;margin-left:5px}#big .bl{font-size:12px;padding:5px 11px}#big{gap:10px}}
+
+.gbtn,.obtn{display:inline-flex;align-items:center;justify-content:center;gap:6px;font:700 14px Inter,sans-serif;text-decoration:none;border-radius:999px;padding:8px 16px;white-space:nowrap;cursor:pointer;transition:transform .15s,background .15s}
+.gbtn{background:var(--gold);color:var(--navy);border:1px solid var(--gold)}
+.gbtn:hover,.gbtn:focus-visible{background:#ecbd6c;transform:translateY(-2px);outline:none}
+.obtn{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.45)}
+.obtn:hover,.obtn:focus-visible{background:rgba(255,255,255,.08);transform:translateY(-2px);outline:none}
+.big{font-size:19px;padding:12px 26px}
+.s-close .cta{display:flex;gap:14px;margin-top:22px}
+.s-close .shared{margin-top:14px;font-size:13px;color:rgba(255,255,255,.5)}
+.s-close .closew h1{margin-top:14px}.s-close .closew .lead{margin-top:16px}.s-close .trio{margin-top:18px}.s-close .closew .mark{width:96px;height:96px}
+#ctrow{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;padding:2px 0}
+#ctrow .gbtn{font-size:13px;padding:6px 14px}
+#ctrow .shared{font-size:11.5px;color:rgba(255,255,255,.5)}
+#drawer{position:fixed;top:0;right:0;bottom:0;width:380px;max-width:100%;z-index:120;background:#0A2A43;border-left:1px solid rgba(255,255,255,.12);box-shadow:-20px 0 50px rgba(0,0,0,.4);padding:22px 24px 28px;overflow-y:auto;color:#fff;-webkit-overflow-scrolling:touch}
+#drawer[hidden]{display:none}
+.dhead{display:flex;justify-content:space-between;align-items:flex-start}
+#drawer .eyebrow{margin:0 0 4px;color:var(--gold);font-size:11px}
+#drawer h2{font-size:28px;margin:0;letter-spacing:-1px}
+#dclose{background:none;border:1px solid rgba(255,255,255,.3);color:#fff;width:36px;height:36px;border-radius:50%;font-size:22px;line-height:1;cursor:pointer}
+.dsub{font-size:14px;line-height:1.5;color:rgba(255,255,255,.72);margin:10px 0 16px}
+.dlinks{display:flex;flex-direction:column;gap:10px}
+.dlinks a{width:100%;font-size:15px;padding:11px 16px}
+#cform{margin-top:20px;border-top:1px solid rgba(255,255,255,.14);padding-top:16px;display:flex;flex-direction:column;gap:10px}
+.ftitle{font-weight:800;font-size:17px}
+#cform label{display:flex;flex-direction:column;gap:4px;font-size:12.5px;font-weight:600;color:rgba(255,255,255,.8)}
+#cform input,#cform textarea{font:400 16px Inter,sans-serif;color:var(--navy);background:var(--paper);border:1px solid transparent;border-radius:10px;padding:9px 11px;width:100%}
+#cform input:focus,#cform textarea:focus{outline:2px solid var(--steel);outline-offset:1px}
+#cform textarea{resize:vertical;min-height:72px}
+.two-up{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.hint{font-size:12px;color:rgba(255,255,255,.55);margin-top:-4px}
+.hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;opacity:0}
+#ferr{font-size:13px;color:#ffd08a;min-height:0}
+#ferr a{color:var(--gold)}
+#fsend{align-self:flex-start;font-size:15px;padding:10px 26px}
+#fsend[disabled]{opacity:.6;cursor:wait}
+#fthanks{margin-top:22px;padding:18px;border-radius:14px;background:rgba(227,171,79,.12);border:1px solid rgba(227,171,79,.4)}
+#fthanks h3{color:var(--gold)}#fthanks p{font-size:14px;margin-top:6px;color:rgba(255,255,255,.8)}
+@media (min-width:900px){#player.dopen{right:380px}}
+@media (max-width:640px){#ctrow{gap:4px 10px}#ctrow .shared{font-size:10.5px}
+ #drawer{top:auto;left:0;width:100%;max-height:78vh;border-left:0;border-top:1px solid rgba(255,255,255,.15);border-radius:18px 18px 0 0;padding:16px 18px 24px}
+ #player.dopen #wrap{justify-content:flex-start;padding-top:6px}}
 </style></head><body>
 <div id="player">
  <div id="wrap">
@@ -347,6 +388,8 @@ ul{list-style:none}
   <h1 class="rv d2">Together, we <span class="gold">make it happen.</span></h1>
   <div class="trio rv d3"><span>Know your class</span><span>Tell the whole story</span><span>Use your pricing tools</span></div>
   <p class="lead rv d4">Need a hand pre-qualifying or packaging a real estate submission? The Stuckey &amp; Company team is here to help. &middot; stuckey.com</p>
+  <div class="cta rv d5"><a class="gbtn big" href="https://calendly.com/dwightstuckey/" target="_blank" rel="noopener">Schedule a meeting &#8599;</a><button class="obtn big" data-contact type="button">Contact Dwight</button></div>
+  <div class="shared rv d6">Shared for Stuckey &amp; Company agents.</div>
 </div>
 <div class="foot"><div>Notes from The Hartford&rsquo;s HartBeat session, prepared by Stuckey &amp; Company. Not an official Hartford product.</div><div class="src">Hartford slide images aren&rsquo;t reproduced here because The Hartford marks them confidential; wording is summarized.</div></div></section></div>
    <button id="big" aria-label="Play presentation"><span class="pb"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><span class="bl">Play &middot; 6:40 with sound</span></button>
@@ -364,8 +407,30 @@ ul{list-style:none}
    <button id="bcc" class="act" aria-pressed="true" aria-label="Captions">CC</button>
    <button id="bfs" aria-label="Fullscreen"><svg viewBox="0 0 24 24"><path d="M5 5h5v2H7v3H5zm9 0h5v5h-2V7h-3zM5 14h2v3h3v2H5zm12 0h2v5h-5v-2h3z"/></svg></button>
   </div>
+  <div id="ctrow"><button id="bcontact" class="gbtn" data-contact type="button" aria-haspopup="dialog" aria-controls="drawer">Contact Dwight</button><span class="shared">Shared for Stuckey &amp; Company agents.</span></div>
   <div id="credit">Notes from The Hartford&rsquo;s HartBeat session, prepared by Stuckey &amp; Company. Not an official Hartford product. Narration voice is AI-generated.</div>
  </div>
+<aside id="drawer" role="dialog" aria-modal="false" aria-labelledby="dtitle" hidden>
+ <div class="dhead"><div><div class="eyebrow">Stuckey &amp; Company</div><h2 id="dtitle">Contact Dwight</h2></div><button id="dclose" type="button" aria-label="Close contact panel">&times;</button></div>
+ <p class="dsub">Questions about this session or a real estate account? The video keeps playing while this is open.</p>
+ <div class="dlinks"><a class="gbtn" href="https://calendly.com/dwightstuckey/" target="_blank" rel="noopener">Schedule a meeting &#8599;</a><a class="obtn" href="mailto:dwight@stuckey.com?subject=HartBeat%20recap%3A%20Real%20Talk%20on%20Real%20Estate">Email dwight@stuckey.com</a></div>
+ <form id="cform" action="https://formsubmit.co/dwight@stuckey.com" method="POST" novalidate>
+  <div class="ftitle">Have someone get back to me</div>
+  <input type="hidden" name="_subject" value="HartBeat recap: callback request">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_template" value="table">
+  <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+  <label>Name<input name="name" required maxlength="80" autocomplete="name"></label>
+  <label>Agency<input name="agency" maxlength="100" autocomplete="organization"></label>
+  <div class="two-up"><label>Phone<input name="phone" type="tel" maxlength="30" autocomplete="tel"></label><label>Email<input name="email" type="email" maxlength="120" autocomplete="email"></label></div>
+  <div class="hint">Phone or email, at least one.</div>
+  <label>Short question<textarea name="question" required maxlength="600" rows="3"></textarea></label>
+  <div class="hint">Please don&rsquo;t include client, policy or loss details.</div>
+  <div id="ferr" role="alert"></div>
+  <button id="fsend" class="gbtn" type="submit">Send</button>
+ </form>
+ <div id="fthanks" hidden><h3>Thanks, we got it.</h3><p>Someone from Stuckey &amp; Company will get back to you soon.</p></div>
+</aside>
  <audio id="au" src="audio/hartbeat-narration.mp3" preload="metadata" playsinline></audio>
 </div>
 <script>window.TIMING={"total": 400.82, "slides": [{"id": "title", "start": 0.3, "speechEnd": 27.28, "end": 27.98}, {"id": "why", "start": 27.98, "speechEnd": 61.315, "end": 62.015}, {"id": "classes", "start": 62.015, "speechEnd": 79.844, "end": 80.544}, {"id": "hab", "start": 80.544, "speechEnd": 127.179, "end": 127.879}, {"id": "lro", "start": 127.879, "speechEnd": 174.664, "end": 175.364}, {"id": "pricing", "start": 175.364, "speechEnd": 211.078, "end": 211.778}, {"id": "wc", "start": 211.778, "speechEnd": 237.459, "end": 238.159}, {"id": "qa", "start": 238.159, "speechEnd": 300.102, "end": 300.802}, {"id": "limits", "start": 300.802, "speechEnd": 325.012, "end": 325.712}, {"id": "actions", "start": 325.712, "speechEnd": 363.53, "end": 364.23}, {"id": "upcoming", "start": 364.23, "speechEnd": 382.535, "end": 383.235}, {"id": "close", "start": 383.235, "speechEnd": 399.969, "end": 400.769}], "captions": [{"s": 0.3, "e": 3.01, "t": "Hi everyone, and thanks for pressing play."}, {"s": 3.01, "e": 8.94, "t": "This is a quick recap of The Hartford's weekly HartBeat agent training from Friday, November 13th, 2026."}, {"s": 8.94, "e": 12.96, "t": "The topic was Real Talk on Real Estate, presented by Erin Parkinson,"}, {"s": 12.96, "e": 20.1, "t": "Regional Sales Executive for Hartford Small Commercial in the Central States region, and Chris Tosie, Agency Education Consultant."}, {"s": 20.1, "e": 24.22, "t": "These are our notes from the session, prepared by Stuckey & Company,"}, {"s": 24.22, "e": 27.28, "t": "so you can catch the key points in a few minutes."}, {"s": 27.98, "e": 29.94, "t": "So why spend time on real estate?"}, {"s": 29.94, "e": 34.08, "t": "Erin said it's currently her team's number one industry for new business this year,"}, {"s": 34.08, "e": 36.74, "t": "counting habitational and lessors' risk together."}, {"s": 36.74, "e": 40.14, "t": "Her team has written right at six million dollars in new business,"}, {"s": 40.14, "e": 47.02, "t": "and more than twenty-five million dollars in total premium year to date across those two segments, with a couple of months still left in the year."}, {"s": 47.02, "e": 50.94, "t": "Those numbers are for her team's small business book, not all of The Hartford."}, {"s": 50.94, "e": 53.56, "t": "In her words, this isn't a theoretical appetite."}, {"s": 53.56, "e": 55.35, "t": "They're already winning here."}, {"s": 55.35, "e": 58.18, "t": "So the real question is: where are the opportunities,"}, {"s": 58.18, "e": 61.32, "t": "and what does underwriting need to see to help you win them?"}, {"s": 62.02, "e": 67.85, "t": "Erin focused on three areas: habitational, lessors' risk, and property management, which is workers' comp only."}, {"s": 67.85, "e": 71.45, "t": "The big message is that these are not underwritten the same way."}, {"s": 71.45, "e": 74.63, "t": "She hears them blended together a lot out in the field."}, {"s": 74.63, "e": 77.85, "t": "And the biggest difference between them is building age."}, {"s": 77.85, "e": 79.84, "t": "Let's take them one at a time."}, {"s": 80.54, "e": 82.11, "t": "Habitational first."}, {"s": 82.11, "e": 86.24, "t": "The slide lists four things: modern, meaning 1990 or newer year built."}, {"s": 86.24, "e": 87.75, "t": "Up to six stories."}, {"s": 87.75, "e": 89.22, "t": "Strong occupancy."}, {"s": 89.22, "e": 92.19, "t": "And professionally managed and well maintained."}, {"s": 92.19, "e": 96.07, "t": "Think professionally managed apartment and condominium buildings."}, {"s": 96.07, "e": 98.14, "t": "On year built, Erin was firm."}, {"s": 98.14, "e": 100.86, "t": "It's about when the foundation was poured."}, {"s": 100.86, "e": 105.3, "t": "A building from the 1970s that's been updated still doesn't qualify for hab."}, {"s": 105.3, "e": 107.42, "t": "Two details from underwriting."}, {"s": 107.42, "e": 113.11, "t": "For a condo risk, use the habitational condominium class, not the commercial condo association class."}, {"s": 113.11, "e": 118.36, "t": "And get the square footage right, including garages, so exposure and pricing come out right."}, {"s": 118.36, "e": 122.89, "t": "If you have a good, professionally managed hab account built in 1990 or newer,"}, {"s": 122.89, "e": 127.18, "t": "pre-qualify it with your territory manager before you spend time in ICON."}, {"s": 127.88, "e": 129.75, "t": "Now lessors' risk, or LRO."}, {"s": 129.75, "e": 133.41, "t": "Erin said there's a lot more flexibility here than people realize."}, {"s": 133.41, "e": 136.17, "t": "The 1990 guideline does not apply the same way."}, {"s": 136.17, "e": 139.82, "t": "Underwriters have won buildings that are even a hundred years old."}, {"s": 139.82, "e": 142.54, "t": "What matters is the story behind the building."}, {"s": 142.54, "e": 144.18, "t": "Has it been maintained?"}, {"s": 144.18, "e": 145.68, "t": "When was it updated?"}, {"s": 145.68, "e": 149.0, "t": "What shape are the roof, plumbing, electrical and HVAC in?"}, {"s": 149.0, "e": 151.25, "t": "Who manages it, and who occupies it?"}, {"s": 151.25, "e": 153.96, "t": "LRO can include tenants beyond office space,"}, {"s": 153.96, "e": 157.76, "t": "so underwriting needs an accurate, current picture of the tenant mix."}, {"s": 157.76, "e": 162.72, "t": "Send a current rent roll or tenant list with each tenant's name, operation and square footage."}, {"s": 162.72, "e": 166.98, "t": "And underwriting's tongue-in-cheek tip: if the tenant list still shows a Sears,"}, {"s": 166.98, "e": 170.82, "t": "a Radio Shack or a Blockbuster, it's probably time to double-check it."}, {"s": 170.82, "e": 174.66, "t": "Bottom line: don't let building age automatically disqualify an LRO."}, {"s": 175.36, "e": 177.05, "t": "A few words on pricing."}, {"s": 177.05, "e": 181.01, "t": "On LRO, there's more wind and hail flexibility than you might think."}, {"s": 181.01, "e": 186.8, "t": "A wind and hail deductible will often apply, and Erin's team can help you compare a fixed-dollar deductible,"}, {"s": 186.8, "e": 191.48, "t": "like ten thousand dollars, against a percentage deductible, so it's apples to apples."}, {"s": 191.48, "e": 194.91, "t": "There's pricing flexibility on both habitational and LRO."}, {"s": 194.91, "e": 199.59, "t": "Apply your own pricing credits, then tell the underwriter what price you need to win."}, {"s": 199.59, "e": 202.68, "t": "If the number still looks short, refer it in anyway."}, {"s": 202.68, "e": 207.41, "t": "On a strong account, underwriting may be able to unlock other pricing through tiering."}, {"s": 207.41, "e": 211.08, "t": "Erin's closing point: applying pricing can double your win rate."}, {"s": 211.78, "e": 214.56, "t": "Third, property management, workers' comp only."}, {"s": 214.56, "e": 218.48, "t": "Erin's ask: don't overlook the comp opportunity with property managers."}, {"s": 218.48, "e": 222.82, "t": "The Hartford can consider first-party managers, who manage their own properties,"}, {"s": 222.82, "e": 226.18, "t": "and third-party managers, who manage properties for others."}, {"s": 226.18, "e": 231.89, "t": "They're looking for experienced operations, quality properties, and a clear understanding of employee duties."}, {"s": 231.89, "e": 237.46, "t": "The one thing to watch: it should stay professional property management, and not drift into handyman work."}, {"s": 238.16, "e": 240.73, "t": "A few questions came up after the slides."}, {"s": 240.73, "e": 244.07, "t": "First, is there a cap on the number of buildings for hab?"}, {"s": 244.07, "e": 246.63, "t": "There's no specific building count limit."}, {"s": 246.63, "e": 249.73, "t": "Single-family homes are not considered habitational."}, {"s": 249.73, "e": 253.08, "t": "In wind-heavy areas, taller buildings, up to six stories,"}, {"s": 253.08, "e": 258.26, "t": "are preferred over a long stretch of single-story buildings, because there's less roof exposed."}, {"s": 258.26, "e": 261.94, "t": "And underwriting will look at concentration of risk in one area."}, {"s": 261.94, "e": 263.83, "t": "Second, state availability."}, {"s": 263.83, "e": 266.06, "t": "There's no universal hab appetite."}, {"s": 266.06, "e": 269.69, "t": "California is closed for habitational, but LRO is open there."}, {"s": 269.69, "e": 273.51, "t": "Chris believed Florida and Oklahoma may also be restricted for hab,"}, {"s": 273.51, "e": 276.71, "t": "but that wasn't confirmed, so check before you assume."}, {"s": 276.71, "e": 278.99, "t": "Your territory manager can confirm,"}, {"s": 278.99, "e": 283.59, "t": "and entering the state of operation in EBC will give you a sense of appetite too."}, {"s": 283.59, "e": 286.4, "t": "Third, a hab remodel on the historic register."}, {"s": 286.4, "e": 289.21, "t": "The 1990 foundation rule still applies to hab."}, {"s": 289.21, "e": 294.1, "t": "Erin wasn't sure whether a 1990-or-newer building could also be on the historic register,"}, {"s": 294.1, "e": 296.95, "t": "so take that account to your territory manager."}, {"s": 296.95, "e": 300.1, "t": "For older buildings, LRO is the more flexible path."}, {"s": 300.8, "e": 304.3, "t": "Here are the capacity limits shown on The Hartford's slides."}, {"s": 304.3, "e": 306.59, "t": "A quick note: these were on screen,"}, {"s": 306.59, "e": 311.01, "t": "but they weren't discussed out loud, so confirm them for your specific account."}, {"s": 311.01, "e": 315.87, "t": "Habitational: up to twenty million dollars per location, and thirty million per account."}, {"s": 315.87, "e": 320.44, "t": "Lessors' risk: up to fifteen million per location, and thirty million per account."}, {"s": 320.44, "e": 325.01, "t": "Property manager workers' comp: up to five million dollars in payroll per account."}, {"s": 325.71, "e": 327.94, "t": "So, what should you do this week?"}, {"s": 327.94, "e": 332.44, "t": "One: pre-qualify hab or LRO with your territory manager whenever eligibility,"}, {"s": 332.44, "e": 335.65, "t": "state, concentration, or account details are unclear."}, {"s": 335.65, "e": 338.27, "t": "Two: on hab, confirm the foundation year,"}, {"s": 338.27, "e": 343.06, "t": "use the habitational condo class, and send accurate square footage, garages included."}, {"s": 343.06, "e": 348.16, "t": "Three: on LRO, send a current rent roll with tenant names, operations and square footage."}, {"s": 348.16, "e": 352.21, "t": "Four: apply your pricing credits, tell underwriting your target price,"}, {"s": 352.21, "e": 355.92, "t": "and refer strong accounts even if the first number looks short."}, {"s": 355.92, "e": 359.87, "t": "And five: look for workers' comp with your property manager clients,"}, {"s": 359.87, "e": 363.53, "t": "and document their experience, properties and employee duties."}, {"s": 364.23, "e": 365.44, "t": "Looking ahead."}, {"s": 365.44, "e": 369.57, "t": "Next week's HartBeat, on November 20th, is all about tech: Let's Talk Tech."}, {"s": 369.57, "e": 372.87, "t": "There's no session the week of Thanksgiving, November 27th."}, {"s": 372.87, "e": 376.5, "t": "Later topics on the slide include Restaurants, Serving up Success,"}, {"s": 376.5, "e": 379.75, "t": "and The Power Pair: Professional and Management Liability."}, {"s": 379.75, "e": 382.54, "t": "The Hartford also invites you to suggest topics."}, {"s": 383.24, "e": 384.45, "t": "That's the recap."}, {"s": 384.45, "e": 387.21, "t": "Erin's message was simple: know which class you're in,"}, {"s": 387.21, "e": 390.97, "t": "give underwriting the whole story, and use the pricing tools you already have."}, {"s": 390.97, "e": 394.57, "t": "If you'd like a hand pre-qualifying or packaging a real estate submission,"}, {"s": 394.57, "e": 396.96, "t": "the Stuckey & Company team is here to help."}, {"s": 396.96, "e": 398.3, "t": "Thanks for watching."}, {"s": 398.3, "e": 399.97, "t": "Together, we make it happen."}]};</script>
@@ -380,7 +445,8 @@ function layout(){
   const fs=player.classList.contains('fsmode');
   const barH=fs?0:$('bar').offsetHeight;
   const vw=player.clientWidth, vh=player.clientHeight;
-  const portrait=vw/vh<1.05 && !fs;
+  const phoneD=player.classList.contains('dopen') && vw<=640;
+  const portrait=vw/vh<1.05 && !fs && !phoneD;
   player.classList.toggle('portrait',portrait);
   const capRoom=portrait?Math.min(130,vh*0.2):0;
   let w=Math.min(vw,(vh-barH-capRoom)*16/9); if(!fs) w=Math.min(w,vw);
@@ -391,6 +457,8 @@ function layout(){
   if(portrait){ if(cap.parentNode!==wrap) wrap.appendChild(cap); cap.style.position='relative';cap.style.left='0';cap.style.transform='none';cap.style.bottom='auto';cap.style.width=w+'px';cap.style.minHeight=capRoom+'px';cap.style.paddingTop='12px'}
   else{ if(cap.parentNode!==screen) screen.appendChild(cap); cap.style.cssText='font-size:'+cap.style.fontSize}
   if(!ccOn) cap.classList.add('off');
+  const dr=document.getElementById('drawer');
+  if(dr){ if(phoneD){const r=screen.getBoundingClientRect(); dr.style.top=Math.round(r.bottom+6)+'px'; dr.style.maxHeight='none'} else {dr.style.top=''; dr.style.maxHeight=''} }
 }
 function slideAt(t){let i=0;for(let k=0;k<S.length;k++){if(t>=S[k].start-0.05)i=k}return i}
 function show(i,instant){
@@ -423,7 +491,7 @@ $('bplay').addEventListener('click',toggle);
 $('bprev').addEventListener('click',()=>{const t=au.currentTime; let i=slideAt(t); if(t-S[i].start<2&&i>0)i--; seek(S[i].start+0.01)});
 $('bnext').addEventListener('click',()=>{const i=slideAt(au.currentTime); if(i<S.length-1) seek(S[i+1].start+0.01)});
 $('bcc').addEventListener('click',()=>{ccOn=!ccOn; cap.classList.toggle('off',!ccOn); $('bcc').classList.toggle('act',ccOn); $('bcc').setAttribute('aria-pressed',ccOn)});
-screen.addEventListener('click',e=>{ if(e.target.closest('#big')) return; if(started) toggle(); else play() });
+screen.addEventListener('click',e=>{ if(e.target.closest('#big')||e.target.closest('a,button[data-contact]')) return; if(started) toggle(); else play() });
 // fullscreen
 function isFs(){return document.fullscreenElement||document.webkitFullscreenElement||player.classList.contains('pseudo')}
 function fs(){
@@ -449,7 +517,7 @@ sc.addEventListener('pointercancel',()=>{dragging=false});
 S.forEach((s,k)=>{ if(k===0) return; const d=document.createElement('div'); d.className='tick'; d.style.left=(s.start/total*100)+'%'; sc.appendChild(d) });
 // keyboard
 document.addEventListener('keydown',e=>{
-  if(e.target.tagName==='INPUT') return;
+  if(/INPUT|TEXTAREA|SELECT/.test(e.target.tagName)) return;
   const k=e.key;
   if(k===' '||k==='k'||k==='K'){e.preventDefault(); toggle()}
   else if(k==='ArrowRight'){e.preventDefault(); seek(au.currentTime+5)}
@@ -460,10 +528,39 @@ document.addEventListener('keydown',e=>{
   else if(k==='p'||k==='P'){$('bprev').click()}
 });
 window.addEventListener('resize',layout); window.addEventListener('orientationchange',()=>setTimeout(layout,200));
+// contact drawer
+const dr=$('drawer');
+function openD(){dr.hidden=false; player.classList.add('dopen'); setTimeout(layout,0); const f=dr.querySelector('#dclose'); f&&f.focus()}
+function closeD(){dr.hidden=true; player.classList.remove('dopen'); setTimeout(layout,0); $('bcontact').focus()}
+document.querySelectorAll('[data-contact]').forEach(b=>b.addEventListener('click',e=>{e.stopPropagation(); dr.hidden?openD():closeD()}));
+$('dclose').addEventListener('click',closeD);
+document.addEventListener('keydown',e=>{ if(e.key==='Escape'&&!dr.hidden) closeD() },true);
+const fm=$('cform');
+fm.addEventListener('submit',async e=>{
+  e.preventDefault(); const err=$('ferr'); err.textContent='';
+  const v=n=>(fm.elements[n].value||'').trim();
+  if(v('_honey')) return;
+  if(!v('name')){err.textContent='Please add your name.'; fm.elements.name.focus(); return}
+  if(!v('phone')&&!v('email')){err.textContent='Please add a phone number or an email so we can reach you.'; fm.elements.phone.focus(); return}
+  if(v('email')&&!fm.elements.email.checkValidity()){err.textContent='That email address doesn\u2019t look right.'; fm.elements.email.focus(); return}
+  if(!v('question')){err.textContent='Please add a short question.'; fm.elements.question.focus(); return}
+  const data={name:v('name'),agency:v('agency'),phone:v('phone'),email:v('email'),question:v('question'),source:'HartBeat recap: Real Talk on Real Estate (Nov 13, 2026)',_subject:'HartBeat recap: callback request from '+v('name'),_captcha:'false',_template:'table'};
+  const btn=$('fsend'); btn.disabled=true; btn.textContent='Sending\u2026';
+  try{
+    const r=await fetch('https://formsubmit.co/ajax/dwight@stuckey.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)});
+    const j=await r.json().catch(()=>({}));
+    if(!r.ok||String(j.success)==='false') throw new Error(j.message||('HTTP '+r.status));
+    fm.hidden=true; $('fthanks').hidden=false;
+  }catch(x){
+    const body=encodeURIComponent('Name: '+data.name+'\nAgency: '+data.agency+'\nPhone: '+data.phone+'\nEmail: '+data.email+'\n\nQuestion: '+data.question+'\n\n('+data.source+')');
+    err.innerHTML='We couldn\u2019t send that just now. <a href="mailto:dwight@stuckey.com?subject='+encodeURIComponent(data._subject)+'&body='+body+'">Send it by email instead</a>.';
+  }finally{btn.disabled=false; btn.textContent='Send'}
+});
 // test hook: ?t=SECONDS shows that moment (paused) for screenshots
 const q=new URLSearchParams(location.search);
 layout(); show(0,true); playIcon(); tick();
 if(q.has('t')){const t=parseFloat(q.get('t'))||0; au.currentTime=t; cur=-1; show(slideAt(t),true); lastCap=null; const c=capAt(t); cap.innerHTML=c?'<span>'+c+'</span>':''; setPos(t); $('time').textContent=fmt(t)+' / '+fmt(total); if(q.has('nobig')) $('big').classList.add('hide')}
+if(q.has('contact')) openD();
 })();
 </script>
 </body></html>
