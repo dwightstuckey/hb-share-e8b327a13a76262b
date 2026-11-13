@@ -229,7 +229,7 @@ ul{list-style:none}
 .hint{font-size:12px;color:rgba(255,255,255,.55);margin-top:-4px}
 .hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;opacity:0}
 #ferr{font-size:13px;color:#ffd08a;min-height:0}
-#ferr a{color:var(--gold)}
+#ferr a,#fthanks a{color:var(--gold)}
 #fsend{align-self:flex-start;font-size:15px;padding:10px 26px}
 #fsend[disabled]{opacity:.6;cursor:wait}
 #fthanks{margin-top:22px;padding:18px;border-radius:14px;background:rgba(227,171,79,.12);border:1px solid rgba(227,171,79,.4)}
@@ -414,7 +414,7 @@ ul{list-style:none}
  <div class="dhead"><div><div class="eyebrow">Stuckey &amp; Company</div><h2 id="dtitle">Contact Dwight</h2></div><button id="dclose" type="button" aria-label="Close contact panel">&times;</button></div>
  <p class="dsub">Questions about this session or a real estate account? The video keeps playing while this is open.</p>
  <div class="dlinks"><a class="gbtn" href="https://calendly.com/dwightstuckey/" target="_blank" rel="noopener">Schedule a meeting &#8599;</a><a class="obtn" href="mailto:dwight@stuckey.com?subject=HartBeat%20recap%3A%20Real%20Talk%20on%20Real%20Estate">Email dwight@stuckey.com</a></div>
- <form id="cform" action="https://formsubmit.co/dwight@stuckey.com" method="POST" novalidate>
+ <form id="cform" action="https://formsubmit.co/e8f1a17d50ddcc24819c20531822628e" method="POST" novalidate>
   <div class="ftitle">Have someone get back to me</div>
   <input type="hidden" name="_subject" value="HartBeat recap: callback request">
   <input type="hidden" name="_captcha" value="false">
@@ -429,7 +429,7 @@ ul{list-style:none}
   <div id="ferr" role="alert"></div>
   <button id="fsend" class="gbtn" type="submit">Send</button>
  </form>
- <div id="fthanks" hidden><h3>Thanks, we got it.</h3><p>Someone from Stuckey &amp; Company will get back to you soon.</p></div>
+ <div id="fthanks" hidden><h3>Thanks, we got it.</h3><p>Your message was sent to dwight@stuckey.com. Someone from Stuckey &amp; Company will get back to you soon.</p></div>
 </aside>
  <audio id="au" src="audio/hartbeat-narration-5min.mp3" preload="metadata" playsinline></audio>
 </div>
@@ -546,14 +546,24 @@ fm.addEventListener('submit',async e=>{
   if(!v('question')){err.textContent='Please add a short question.'; fm.elements.question.focus(); return}
   const data={name:v('name'),agency:v('agency'),phone:v('phone'),email:v('email'),question:v('question'),source:'HartBeat recap: Real Talk on Real Estate (Nov 13, 2026)',_subject:'HartBeat recap: callback request from '+v('name'),_captcha:'false',_template:'table'};
   const btn=$('fsend'); btn.disabled=true; btn.textContent='Sending\u2026';
-  try{
-    const r=await fetch('https://formsubmit.co/ajax/dwight@stuckey.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)});
-    const j=await r.json().catch(()=>({}));
-    if(!r.ok||String(j.success)==='false') throw new Error(j.message||('HTTP '+r.status));
-    fm.hidden=true; $('fthanks').hidden=false;
-  }catch(x){
+  const mailto=()=>{
     const body=encodeURIComponent('Name: '+data.name+'\nAgency: '+data.agency+'\nPhone: '+data.phone+'\nEmail: '+data.email+'\n\nQuestion: '+data.question+'\n\n('+data.source+')');
-    err.innerHTML='We couldn\u2019t send that just now. <a href="mailto:dwight@stuckey.com?subject='+encodeURIComponent(data._subject)+'&body='+body+'">Send it by email instead</a>.';
+    return 'mailto:dwight@stuckey.com?subject='+encodeURIComponent(data._subject)+'&body='+body;
+  };
+  const showThanks=(title,html)=>{ fm.hidden=true; const th=$('fthanks'); th.hidden=false; th.innerHTML='<h3>'+title+'</h3><p>'+html+'</p>'; };
+  try{
+    const r=await fetch('https://formsubmit.co/ajax/e8f1a17d50ddcc24819c20531822628e',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)});
+    const j=await r.json().catch(()=>({}));
+    const msg=String(j.message||'');
+    const accepted=r.ok && (j.success===true || String(j.success)==='true');
+    if(/activat/i.test(msg)){
+      showThanks('Thanks \u2014 one more step on our side.','Your request was received, but FormSubmit is waiting for a one-time activation. Once the \u201cActivate Form\u201d link in the FormSubmit email to dwight@stuckey.com is clicked (check Junk or Spam too), this request and any earlier ones will be delivered. If you prefer not to wait, <a href="'+mailto()+'">send it by email instead</a>.');
+      return;
+    }
+    if(!accepted) throw new Error(msg||('HTTP '+r.status));
+    showThanks('Thanks, we got it.','Your message was sent to dwight@stuckey.com. Someone from Stuckey &amp; Company will get back to you soon.');
+  }catch(x){
+    err.innerHTML='We couldn\u2019t send that just now. <a href="'+mailto()+'">Send it by email instead</a>.';
   }finally{btn.disabled=false; btn.textContent='Send'}
 });
 // test hook: ?t=SECONDS shows that moment (paused) for screenshots
